@@ -3,9 +3,7 @@ package contest
 import (
 	"GoOnlineJudge/config"
 	"GoOnlineJudge/model"
-
-	"restweb"
-
+	"GoOnlineJudge/restweb"
 	"encoding/json"
 	"net/http"
 	"strconv"

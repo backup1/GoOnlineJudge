@@ -5,10 +5,10 @@ import (
 	"GoOnlineJudge/model"
 	"html/template"
 	"net/http"
-	"restweb"
 	"strconv"
 	"strings"
 	"time"
+	"GoOnlineJudge/restweb"
 )
 
 func requireAdmin(ctx *restweb.Context) bool {

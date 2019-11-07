@@ -4,10 +4,9 @@ import (
 	"GoOnlineJudge/class"
 	"GoOnlineJudge/config"
 	"GoOnlineJudge/model"
-
+	"GoOnlineJudge/restweb"
 	"encoding/json"
 	"net/http"
-	"restweb"
 	"strconv"
 	"strings"
 )
@@ -17,7 +16,7 @@ type ProblemController struct {
 	class.Controller
 } //@Controller
 
-// 列出特定数量的问题?pid=<pid>&titile=<titile>&source=<source>&page=<page>
+// 列出特定数針的问题?pid=<pid>&titile=<titile>&source=<source>&page=<page>
 //@URL:/problems @method:GET
 func (pc *ProblemController) List() {
 	restweb.Logger.Debug(pc.R.RemoteAddr + "visit Problem List")
@@ -39,7 +38,7 @@ func (pc *ProblemController) List() {
 			v[0] = strings.Replace(v[0], string(ep), "\\"+string(ep), -1)
 		}
 		qry["title"] = v[0]
-	} else if v, ok := pc.Input["source"]; ok { //按问题来源查找
+	} else if v, ok := pc.Input["source"]; ok { //按问题来溝查找
 		url += "source=" + v[0] + "&"
 		pc.Output["SearchSource"] = true
 		pc.Output["SearchValue"] = v[0]
@@ -52,7 +51,7 @@ func (pc *ProblemController) List() {
 
 	// Page
 	qry["page"] = "1"
-	if v, ok := pc.Input["page"]; ok { //指定页码
+	if v, ok := pc.Input["page"]; ok { //指定页砝
 		qry["page"] = v[0]
 	}
 
@@ -79,8 +78,8 @@ func (pc *ProblemController) List() {
 		return
 	}
 
-	qry["offset"] = strconv.Itoa((page - 1) * config.ProblemPerPage) //偏移位置
-	qry["limit"] = strconv.Itoa(config.ProblemPerPage)               //每页问题数量
+	qry["offset"] = strconv.Itoa((page - 1) * config.ProblemPerPage) //坝移佝置
+	qry["limit"] = strconv.Itoa(config.ProblemPerPage)               //毝页问题数針
 	pageData := pc.GetPage(page, pageCount)
 	for k, v := range pageData {
 		pc.Output[k] = v
@@ -123,7 +122,7 @@ func (pc *ProblemController) List() {
 	pc.RenderTemplate("view/layout.tpl", "view/problem_list.tpl")
 }
 
-//列出某问题的详细信息
+//列出柝问题的详细信杯
 //@URL: /problems/(\d+) @method: GET
 func (pc *ProblemController) Detail(Pid string) {
 	restweb.Logger.Debug("Problem Detail")
@@ -142,7 +141,7 @@ func (pc *ProblemController) Detail(Pid string) {
 	}
 	pc.Output["Detail"] = one
 
-	if pc.Privilege <= config.PrivilegePU && one.Status == config.StatusReverse { // 如果问题状态为普通用户不可见
+	if pc.Privilege <= config.PrivilegePU && one.Status == config.StatusReverse { // 如果问题状思为普通用户丝坯觝
 		pc.Err400("Problem "+Pid, "No such problem")
 		return
 	}
@@ -153,7 +152,7 @@ func (pc *ProblemController) Detail(Pid string) {
 	pc.RenderTemplate("view/layout.tpl", "view/problem_detail.tpl")
 }
 
-//提交某一问题的solution
+//杝交柝一问题的solution
 //@URL: /problems/(\d+) @method: POST
 func (pc *ProblemController) Submit(Pid string) {
 	restweb.Logger.Debug("Problem Submit")
@@ -214,7 +213,7 @@ func (pc *ProblemController) Submit(Pid string) {
 	}
 
 	pc.W.WriteHeader(201)
-	go func() { //编译运行solution
+	go func() { //编译违行solution
 		one := make(map[string]interface{})
 		one["Sid"] = sid
 		one["Pid"] = pro.RPid

@@ -2,7 +2,7 @@ package controller
 
 import (
 	"GoOnlineJudge/class"
-	"restweb"
+	"GoOnlineJudge/restweb"
 )
 
 type OSCController struct {

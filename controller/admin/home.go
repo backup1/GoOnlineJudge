@@ -2,8 +2,7 @@ package admin
 
 import (
 	"GoOnlineJudge/class"
-
-	"restweb"
+	"GoOnlineJudge/restweb"
 )
 
 type AdminHome struct {

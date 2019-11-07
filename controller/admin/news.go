@@ -4,9 +4,7 @@ import (
 	"GoOnlineJudge/class"
 	"GoOnlineJudge/config"
 	"GoOnlineJudge/model"
-
-	"restweb"
-
+	"GoOnlineJudge/restweb"
 	"html/template"
 	"net/http"
 	"strconv"
@@ -18,7 +16,7 @@ type AdminNews struct {
 	class.Controller
 } //@Controller
 
-// //新闻详细信息
+// //新闻详细信杯
 // func (nc *AdminNews) Detail() {
 // 	restweb.Logger.Debug("Admin News Detail")
 

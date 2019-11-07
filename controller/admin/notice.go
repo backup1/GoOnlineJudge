@@ -2,10 +2,10 @@ package admin
 
 import (
 	"GoOnlineJudge/class"
+	"GoOnlineJudge/restweb"
 	"html/template"
 	"net/http"
 	"os"
-	"restweb"
 )
 
 type AdminNotice struct {

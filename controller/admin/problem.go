@@ -4,9 +4,7 @@ import (
 	"GoOnlineJudge/class"
 	"GoOnlineJudge/config"
 	"GoOnlineJudge/model"
-
-	"restweb"
-
+	"GoOnlineJudge/restweb"
 	"html/template"
 	"io/ioutil"
 	"net/http"
@@ -52,7 +50,7 @@ func (pc *AdminProblem) List() {
 	qry := make(map[string]string)
 
 	qry["page"] = "1"
-	if v, ok := pc.Input["page"]; ok { //指定页码
+	if v, ok := pc.Input["page"]; ok { //指定页砝
 		qry["page"] = v[0]
 	}
 	count, err := problemModel.Count(qry)
@@ -73,8 +71,8 @@ func (pc *AdminProblem) List() {
 		return
 	}
 
-	qry["offset"] = strconv.Itoa((page - 1) * config.ProblemPerPage) //偏移位置
-	qry["limit"] = strconv.Itoa(config.ProblemPerPage)               //每页问题数量
+	qry["offset"] = strconv.Itoa((page - 1) * config.ProblemPerPage) //坝移佝置
+	qry["limit"] = strconv.Itoa(config.ProblemPerPage)               //毝页问题数針
 	pageData := pc.GetPage(page, pageCount)
 	for k, v := range pageData {
 		pc.Output[k] = v
@@ -361,7 +359,7 @@ func (pc *AdminProblem) Import() {
 		return
 	}
 
-	// 建立测试数据文件
+	// 建立测试数杮文件
 	createfile(config.Datapath+strconv.Itoa(pid), "sample.in", problem.In)
 	createfile(config.Datapath+strconv.Itoa(pid), "sample.out", problem.Out)
 

@@ -4,9 +4,7 @@ import (
 	"GoOnlineJudge/class"
 	"GoOnlineJudge/config"
 	"GoOnlineJudge/model"
-
-	"restweb"
-
+	"GoOnlineJudge/restweb"
 	"encoding/json"
 	"fmt"
 	"math/rand"
@@ -23,7 +21,7 @@ type AdminUser struct {
 	class.Controller
 } //@Controller
 
-//显示具有特殊权限的用户
+//显示具有特殊权陝的用户
 //@URL: /admin/users/ @method: GET
 func (uc *AdminUser) List() {
 	restweb.Logger.Debug("Admin Privilege User List")
@@ -50,7 +48,7 @@ func (uc *AdminUser) List() {
 	uc.RenderTemplate("view/admin/layout.tpl", "view/admin/user_list.tpl")
 }
 
-//密码设置页面
+//密砝设置页面
 //@URL: /admin/users/pagepassword @method: GET
 func (uc *AdminUser) Pagepassword() {
 	restweb.Logger.Debug("Admin Password Page")
@@ -64,7 +62,7 @@ func (uc *AdminUser) Pagepassword() {
 	uc.RenderTemplate("view/admin/layout.tpl", "view/admin/user_password.tpl")
 }
 
-//设置用户密码
+//设置用户密砝
 //@URL: /admin/users/password @method: PUT
 func (uc *AdminUser) Password() {
 	restweb.Logger.Debug("Admin Password")
@@ -117,7 +115,7 @@ func (uc *AdminUser) Password() {
 	uc.W.Write(b)
 }
 
-// 设置用户权限
+// 设置用户权陝
 //@URL: /admin/privilegeset @method: POST
 func (uc *AdminUser) Privilegeset() {
 	restweb.Logger.Debug("User Privilege")
@@ -172,7 +170,7 @@ func (uc *AdminUser) Privilegeset() {
 	}
 }
 
-//Generate 生成指定数量的用户账号
+//Generate 生戝指定数針的用户账坷
 //@URL: /admin/users/generation @method: GET
 func (uc *AdminUser) GeneratePage() {
 	uc.Output["Title"] = "Admin User Generate"
@@ -221,7 +219,7 @@ func (uc *AdminUser) Generate() {
 	uc.W.Write([]byte(accountlist))
 }
 
-//RandPassword 生成随机8位密码
+//RandPassword 生戝隝机8佝密砝
 func RandPassword() string {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	n := r.Int63()

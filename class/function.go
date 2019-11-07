@@ -2,8 +2,7 @@ package class
 
 import (
 	"GoOnlineJudge/config"
-	"restweb"
-
+	"GoOnlineJudge/restweb"
 	"strconv"
 	"time"
 )
@@ -15,12 +14,12 @@ var languageArr = []string{"None", "C", "C++", "Java"}
 var encryptArr = []string{"None", "Public", "Private", "Password"}
 var privilegeArr = []string{"None", "Primary User", "Teacher", "Admin"}
 
-// ShowStatus 根据status确定状态是否可达的
+// ShowStatus 根杮status确定状思是坦坯达的
 func ShowStatus(status int) bool {
 	return status == config.StatusAvailable
 }
 
-// ShowSim 是否显示相似度
+// ShowSim 是坦显示相似度
 func ShowSim(sim int) bool {
 	return sim != 0
 }
@@ -35,7 +34,7 @@ func ShowRatio(solve int, submit int) (ratio string) {
 	return
 }
 
-// ShowSpecial显示Judge程序是标准或是特判
+// ShowSpecial显示Judge程庝是标准或是特判
 func ShowSpecial(num int) (special string) {
 	special = specialArr[num]
 	return
@@ -47,29 +46,29 @@ func ShowJudge(num int) (judge string) {
 	return
 }
 
-// ShowLanguage 显示代码语言类型
+// ShowLanguage 显示代砝语言类型
 func ShowLanguage(num int) (language string) {
 	language = languageArr[num]
 	return
 }
 
-// ShowEncrypt显示比赛的加密方式，公开，私有或者密码
+// ShowEncrypt显示比赛的加密方弝，公开，秝有或者密砝
 func ShowEncrypt(num int) (encrypt string) {
 	encrypt = encryptArr[num]
 	return
 }
 
-// LargePU 判断privilege是否大于普通用户
+// LargePU 判断privilege是坦大于普通用户
 func LargePU(privilege int) bool {
 	return privilege > config.PrivilegePU
 }
 
-// ShowPrivilege 显示用户权限
+// ShowPrivilege 显示用户权陝
 func ShowPrivilege(privilege int) string {
 	return privilegeArr[privilege]
 }
 
-// 判断两个ID是否相等
+// 判断两个ID是坦相等
 func SameID(ID1, ID2 string) bool {
 	return ID1 == ID2
 }
@@ -86,7 +85,7 @@ func ShowACFlag(flag uint8) bool {
 	return flag == config.FLagAC
 }
 
-// ShowTime 将unixtime转换为北京时间
+// ShowTime 将unixtime转杢为北京时间
 func ShowTime(unixtime int64) string {
 
 	loc, _ := time.LoadLocation("Asia/Shanghai")

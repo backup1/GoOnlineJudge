@@ -2,13 +2,11 @@ package main
 
 import (
 	"log"
-	"restweb"
-
 	_ "GoOnlineJudge/schedule"
-
 	"GoOnlineJudge/controller"
 	"GoOnlineJudge/controller/admin"
 	"GoOnlineJudge/controller/contest"
+	"GoOnlineJudge/restweb"
 )
 
 func main() {

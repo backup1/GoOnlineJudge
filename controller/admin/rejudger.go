@@ -4,9 +4,9 @@ import (
 	"GoOnlineJudge/class"
 	"GoOnlineJudge/config"
 	"GoOnlineJudge/model"
+	"GoOnlineJudge/restweb"
 	"encoding/json"
 	"net/http"
-	"restweb"
 	"strconv"
 	"time"
 )

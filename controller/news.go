@@ -4,9 +4,7 @@ import (
 	"GoOnlineJudge/class"
 	"GoOnlineJudge/config"
 	"GoOnlineJudge/model"
-
-	"restweb"
-
+	"GoOnlineJudge/restweb"
 	"net/http"
 	"strconv"
 )
@@ -37,7 +35,7 @@ func (nc *NewsController) List() {
 
 //@URL: /news/(\d+) @method: GET
 func (nc *NewsController) Detail(Nid string) {
-	nid, err := strconv.Atoi(Nid) //获取nid
+	nid, err := strconv.Atoi(Nid) //获坖nid
 	if err != nil {
 		// http.Error(w, "args error", 400)
 		return

@@ -3,7 +3,7 @@ package controller
 import (
 	"GoOnlineJudge/class"
 	"GoOnlineJudge/model"
-	"restweb"
+	"GoOnlineJudge/restweb"
 )
 
 type HomeController struct {

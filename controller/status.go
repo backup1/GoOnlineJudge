@@ -4,8 +4,8 @@ import (
 	"GoOnlineJudge/class"
 	"GoOnlineJudge/config"
 	"GoOnlineJudge/model"
+	"GoOnlineJudge/restweb"
 	"net/http"
-	"restweb"
 	"strconv"
 )
 

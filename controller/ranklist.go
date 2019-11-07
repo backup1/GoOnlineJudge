@@ -4,18 +4,18 @@ import (
 	"GoOnlineJudge/class"
 	"GoOnlineJudge/config"
 	"GoOnlineJudge/model"
+	"GoOnlineJudge/restweb"
 	"net/http"
-	"restweb"
 	"strconv"
 )
 
-// 排名
+// 排坝
 type rank struct {
 	model.User
 	Index int `json:"index"bson:"index"`
 }
 
-// 排名控件
+// 排坝控件
 type RanklistController struct {
 	class.Controller
 } //@Controller

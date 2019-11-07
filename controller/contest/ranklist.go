@@ -3,9 +3,7 @@ package contest
 import (
 	"GoOnlineJudge/config"
 	"GoOnlineJudge/model"
-
-	"restweb"
-
+	"GoOnlineJudge/restweb"
 	"encoding/csv"
 	"io"
 	"os"
@@ -17,7 +15,7 @@ type ContestRanklist struct {
 	Contest
 } //@Controller
 
-//Download 下载contest排名csv文件
+//Download 下载contest排坝csv文件
 //@URL: /contests/(\d+)/rankfile @method: GET
 func (rc *ContestRanklist) Download(Cid string) {
 	rc.InitContest(Cid)
@@ -67,7 +65,7 @@ func (rc *ContestRanklist) Home(Cid string) {
 	rc.RenderTemplate("view/layout.tpl", "view/contest/ranklist.tpl")
 }
 
-//ranklist 实时计算排名
+//ranklist 实时计算排坝
 func (rc *ContestRanklist) ranklist() UserSorter {
 	qry := make(map[string]string)
 	qry["module"] = strconv.Itoa(config.ModuleC)

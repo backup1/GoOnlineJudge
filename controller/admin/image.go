@@ -2,9 +2,7 @@ package admin
 
 import (
 	"GoOnlineJudge/class"
-
-	"restweb"
-
+	"GoOnlineJudge/restweb"
 	"encoding/json"
 	"io"
 	"os"

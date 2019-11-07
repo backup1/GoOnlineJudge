@@ -1,4 +1,4 @@
-FROM golang:1.4.2
+FROM golang:1.13.4
 MAINTAINER Sakeven "sakeven.jiang@daocloud.io"
 
 ENV OJ_HOME $GOPATH/src

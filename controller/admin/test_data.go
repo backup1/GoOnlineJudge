@@ -3,9 +3,7 @@ package admin
 import (
 	"GoOnlineJudge/class"
 	"GoOnlineJudge/config"
-
-	"restweb"
-
+	"GoOnlineJudge/restweb"
 	"io"
 	"net/http"
 	"os"
@@ -45,7 +43,7 @@ func (tc *AdminTestdata) List(pid string) {
 	tc.RenderTemplate("view/admin/layout.tpl", "view/admin/test_data.tpl")
 }
 
-// 上传测试数据
+// 上传测试数杮
 //@URL: /admin/testdata/(\d+) @method: POST
 func (tc *AdminTestdata) Upload(pid string) {
 	restweb.Logger.Debug("Admin Upload files")
@@ -78,7 +76,7 @@ func (tc *AdminTestdata) Upload(pid string) {
 	tc.Redirect("/admin/testdata/"+pid, http.StatusFound)
 }
 
-// Download 下载测试数据
+// Download 下载测试数杮
 //@URL: /admin/testdata/(\d+)/file @method: GET
 func (tc *AdminTestdata) Download(pid string) {
 	restweb.Logger.Debug("Admin Download files")

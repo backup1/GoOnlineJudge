@@ -4,9 +4,7 @@ import (
 	"GoOnlineJudge/class"
 	"GoOnlineJudge/config"
 	"GoOnlineJudge/model"
-
-	"restweb"
-
+	"GoOnlineJudge/restweb"
 	"net/http"
 	"strconv"
 	"strings"
@@ -64,7 +62,7 @@ func (cc *AdminContest) Add() {
 	cc.RenderTemplate("view/admin/layout.tpl", "view/admin/contest_add.tpl")
 }
 
-// 插入比赛
+// 杒入比赛
 //@URL:/admin/contests/ @method:POST
 func (cc *AdminContest) Insert() {
 	restweb.Logger.Debug("Admin Contest Insert")
@@ -77,10 +75,10 @@ func (cc *AdminContest) Insert() {
 		return
 	}
 
-	cc.Redirect("/admin/contests", http.StatusFound) //重定向到竞赛列表页
+	cc.Redirect("/admin/contests", http.StatusFound) //針定坑到竞赛列表页
 }
 
-//更改contest状态
+//更改contest状思
 //@URL:/admin/contests/(\d+)/status/ @method:POST
 func (cc *AdminContest) Status(Cid string) {
 	restweb.Logger.Debug("Admin Contest Status")
@@ -111,7 +109,7 @@ func (cc *AdminContest) Status(Cid string) {
 		return
 	}
 
-	cc.Redirect("/admin/contests", http.StatusFound) //重定向到竞赛列表页
+	cc.Redirect("/admin/contests", http.StatusFound) //針定坑到竞赛列表页
 }
 
 //删除竞赛
@@ -294,7 +292,7 @@ func (cc *AdminContest) contest() (one model.Contest) {
 			continue
 		}
 		problemModel := model.ProblemModel{}
-		_, err = problemModel.Detail(pid) //检查题目是否存在
+		_, err = problemModel.Detail(pid) //检查题目是坦存在
 		if err != nil {
 			restweb.Logger.Debug(err)
 			continue
